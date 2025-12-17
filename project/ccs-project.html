@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+        @font-face {
+            font-family: "robio";
+            src: url(Roboto-VariableFont_wdth\,wght.ttf);
+        }
+
+        body {
+            background-image: url(AdobeStock_635862150.webp);
+            background-repeat: no-repeat;
+            background-size: 212vh;
+            font-family: "robio";
+
+        }
+
+        .navi {
+            background-color: blueviolet;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navi>div>img {
+            width: 100px;
+            height: 70px;
+        }
+
+        .navi>div {
+            display: flex;
+
+        }
+
+        .navi>div>h3 {
+            margin-right: 20px;
+        }
+
+        .navi>div>a {
+            margin-right: 20px;
+            font-size: larger;
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .puta {
+            padding: 7px;
+            width: 100px;
+            color: white;
+            border: 2px solid white;
+            background-color: blueviolet;
+        }
+
+        .puta:hover {
+            background-color: purple;
+            transition-duration: 1.5s;
+        }
+
+        .conta {
+            width: 100%;
+            height: 691px;
+            margin-top: 54.9vh;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .fr {
+            color: blueviolet;
+            text-align: center;
+            margin-top: 200px;
+            margin-bottom: 0px;
+            animation: fr 2s;
+        }
+
+        @keyframes fr {
+            from {transform: translateX(-100px);}
+            to {transform: translateX(0px);}
+        }
+
+        @keyframes rf {
+            from {transform: translateX(100px);}
+            to {transform: translateX(0px);}
+        }
+
+        .rf {
+            color: blueviolet;
+            text-align: center;
+            margin-top: 0px;
+            animation: rf 2s;
+        }
+
+        .pl {
+            padding: 7px;
+            background-color: white;
+            width: 150px;
+            border: none;
+            color: white;
+            background-color: blueviolet;
+            margin-top: 30px;
+            animation: eri 2s;
+            transition: transform 1s ease;
+
+        }
+
+        @keyframes eri {
+            from {
+                transform: translateY(40px);
+            }
+
+            to {
+                transform: translateY(0px);
+            }
+
+        }
+
+        .pl:hover {
+            background-color: purple;
+            transition-duration: 1.5s;
+            transform: translateY(-15px);
+        }
+
+        .lef {
+            background-color: blue;
+            width: 48%;
+            height: 691px;
+        }
+
+        .rig {
+            background-color: black;
+            width: 48%;
+            height: 691px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .lef>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .rig>div {
+            color: white;
+        }
+
+        .rig>div>h1 {
+            font-size: 70px;
+        }
+
+        .abo {
+            width: 100%;
+            height: 621px;
+            display: flex;
+
+        }
+
+        .wowa,
+        .wuwa {
+            width: 50%;
+            height: 621px;
+        }
+
+        .wuwa>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wowa {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wowa>div {
+            color: blueviolet;
+        }
+
+        .boa {
+            width: 100%;
+            height: 600px;
+            display: flex;
+        }
+
+        .th,
+        .ht {
+            width: 50%;
+            height: 600px;
+        }
+
+        .th>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ht>div {
+            color: blueviolet;
+        }
+
+        .ht {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gri {
+            width: 100%;
+            height: 500px;
+
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto auto;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .gri>div {
+            width: 250px;
+            height: 200px;
+            background-color: blue;
+            box-shadow: 1px 1px 5px black;
+        }
+
+        .gri>div>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pric {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .fre,
+        .lov,
+        .hig {
+            width: 25%;
+            height: 600px;
+            text-align: center;
+            border: 1px solid black;
+
+        }
+
+        .fre>div {
+            width: 100%;
+            height: 50%;
+        }
+
+        .lov>div {
+            width: 100%;
+            height: 50%;
+        }
+
+        .hig>div {
+            width: 100%;
+            height: 50%;
+        }
+
+        .twi {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lasti {
+            width: 100%;
+            height: 400px;
+            background-color: blueviolet;
+            display: flex;
+
+        }
+
+        .bolo,
+        .marji {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .marji>a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+
+        }
+
+        .marji>p {
+            color: white;
+        }
+
+        .bolo {
+            color: white;
+            border-right: 1px solid black;
+        }
+
+        .borbi {
+            display: none;
+        }
+
+        .goro {
+            background-color: blueviolet !important;
+        }
+
+        .deco>h5>a {
+            text-decoration: none !important;
+            color: blueviolet !important;
+        }
+
+        .gri>div {
+            -webkit-transition-duration: 1.5s;
+            -moz-transition-duration: 1.5s;
+            -o-transition-duration: 1.5s;
+            transition-duration: 1.5s;
+
+        }
+
+        .gri>div:hover {
+            transform: scale(1.3);
+            transition-duration: 1.5s;
+        }
+
+
+        @media screen and (max-width: 768px) {
+
+
+            .conta {
+                margin-top: 30vh;
+            }
+
+            .goro {
+                position: fixed !important;
+                width: 100% !important;
+            }
+
+            .twi>button {
+                width: 200px;
+            }
+
+            .fre,
+            .lov,
+            .hig {
+                width: 60%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .pric {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .gri {
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto auto;
+                height: auto;
+                background-color: white;
+                border-top: 2px solid blueviolet;
+                gap: 30px;
+                margin-top: 10px;
+            }
+
+            .ht {
+                background-color: white;
+                text-align: center;
+            }
+
+            .th,
+            .ht {
+                width: 100%;
+                border-top: 2px solid blueviolet;
+            }
+
+            .boa {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .abo {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .wowa,
+            .wuwa {
+                width: 100%;
+                border-top: 2px solid blueviolet;
+
+            }
+
+            .wowa {
+                background-color: white;
+                text-align: center;
+
+            }
+
+            .rig>div {
+                color: blueviolet;
+                text-align: center;
+            }
+
+            .rig {
+                width: 100%;
+                background-color: white;
+                border-top: 2px solid blueviolet;
+
+            }
+
+            .lef {
+                width: 100%;
+                border-top: 2px solid blueviolet;
+            }
+
+            .conta>img {
+                width: 100%;
+
+            }
+
+            body {
+                background-color: white;
+                background-image: none;
+
+            }
+
+            .conta {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .borbi {
+                display: block;
+                position: fixed !important;
+                width: 100% !important;
+                top: 56px !important;
+                z-index: 100 !important;
+
+
+            }
+
+            .navi {
+                display: none;
+            }
+
+            nav>div>img {
+                display: none;
+            }
+        }
+
+        .fre,
+        .lov,
+        .hig {
+            box-shadow: 1px 1px 5px black;
+            transition-duration: 1.5s;
+        }
+
+        .fre:hover,
+        .lov:hover,
+        .hig:hover {
+            transform: scale(1.05);
+            transition-duration: 1.5s;
+        }
+
+        .hig>div>button {
+            padding: 10px;
+            width: 150px;
+            border: 2px solid white;
+            color: white;
+            background-color: blueviolet;
+        }
+
+        .hig>div>button:hover {
+            background-color: purple;
+            transition-duration: 1.5s;
+        }
+
+        .fre>div>button {
+            padding: 10px;
+            width: 150px;
+            border: 2px solid white;
+            color: white;
+            background-color: blueviolet;
+        }
+
+        .fre>div>button:hover {
+            background-color: purple;
+            transition-duration: 1.5s;
+        }
+
+        .lov>div>button {
+            padding: 10px;
+            width: 150px;
+            border: 2px solid white;
+            color: white;
+            background-color: black;
+        }
+
+        .lov>div>button:hover {
+            background-color: white;
+            transition-duration: 1.5s;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="collapse borbi" id="navbarToggleExternalContent" data-bs-theme="dark">
+        <div class="bg-dark p-4 deco">
+            <h5 class="text-body-emphasis h4"><a href="#hom">HOME</a></h5>
+            <h5 class="text-body-emphasis h4"><a href="#abot">ABOUT</a></h5>
+            <h5 class="text-body-emphasis h4"><a href="#pricei">PLANS</a></h5>
+            <h5 class="text-body-emphasis h4"><a href="#contactii">CONTACT</a></h5>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark goro">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <a href="login.html" target="_blank">
+                    <button
+                        style="padding: 7px;width: 100px;color: white;border: 2px solid white;background-color: blueviolet;"
+                        class="lgi">Login</button>
+                </a>
+                <a href="signup.html" target="_blank">
+                    <button
+                        style="padding: 7px;width: 100px;color: white;border: 2px solid white;background-color: blueviolet;"
+                        class="lgi">Sign
+                        Up</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <nav class="navi">
+        <div><img src="black-dumbbells-icon-png.png" alt="">
+        </div>
+        <div>
+            <a href="#hom" id="o">HOME</a>
+            <a href="#abot" id="p">ABOUT</a>
+            <a href="#pricei" id="h">PLANS</a>
+            <a href="#contactii" id="k">CONTACT</a>
+        </div>
+        <div>
+            <a href="login.html" target="_blank">
+                <button class="puta">Login</button>
+            </a>
+            <a href="signup.html" target="_blank">
+                <button class="puta">SignUp</button>
+            </a>
+        </div>
+    </nav>
+    </nav>
+    <div style="display: flex; flex-direction: column; align-items: center;" id="hom">
+        <h1 class="fr">PLACE WHERE </h1>
+        <h1 class="rf">YOUR DREAMS COME TRUE</h1>
+        <a href="#pricei">
+            <button type="button" class="pl">START NOW</button>
+        </a>
+    </div>
+
+    <div class="conta">
+        <div class="lef">
+            <img src="ad420a_fd180f2f1ecf4ed780a9f72ce2280223~mv2_d_1970_1986_s_2.avif" alt="">
+        </div>
+        <div class="rig">
+            <div>
+                <h1>About Base <br>Fit Studio</h1>
+                <br>
+                <br>
+                <p>Fitness training helps you build strength and confidence<br> through consistent effort at the gym.
+                    Here you<br>
+                    can push yourself, learn proper technique, and set<br> goals that support a healthier lifestyle.
+                    This space<br>
+                    invites you to explore workouts, stay motivated, and<br> understand how dedicated practice shapes
+                    lasting
+                    physical and<br> mental progress for body and mind.</p>
+            </div>
+        </div>
+    </div>
+    <div class="abo" id="abot">
+        <div class="wowa">
+            <div>
+                <h1>Community</h1>
+                <p>A strong gym community helps you stay motivated,<br> supported, and connected. Here, people encourage
+                    each other,<br> share goals, and celebrate progress together. It’s a space<br> where friendships
+                    form,
+                    confidence grows, and everyone feels<br> welcome to train, learn, and improve. Being part<br> of a
+                    community
+                    makes every workout<br> more meaningful.</p>
+            </div>
+        </div>
+        <div class="wuwa"><img src="1000_F_571883448_pGEpwKKcdnxgS93QPH9tpUTcBNOzrEjA.jpg" alt=""></div>
+    </div>
+    <div class="boa">
+        <div class="th"><img src="action-athlete-barbell-841130.jpg" alt=""></div>
+        <div class="ht">
+            <div>
+                <h1>Motivation</h1>
+                <p>Gym motivation grows from consistent effort, clear goals,<br> and the energy of the people around
+                    you.<br>
+                    Each workout is a chance to challenge yourself,<br> build discipline, and see real progress. It’s a
+                    place<br> where determination rises, setbacks become lessons, and every<br> small win pushes you
+                    closer to
+                    becoming stronger<br> both physically and mentally.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="gri">
+        <div><img src="fitness-594143_640.jpg" alt=""></div>
+        <div><img src="body-8049570_640.jpg" alt=""></div>
+        <div><img src="fitness-9180669_640.jpg" alt=""></div>
+        <div><img src="jogging-2343558_640.jpg" alt=""></div>
+        <div><img src="weights-8246972_640.jpg" alt=""></div>
+        <div><img src="barbell-1839086_640.jpg" alt=""></div>
+        <div><img src="athlete-7200532_640.jpg" alt=""></div>
+        <div><img src="man-7847247_640.jpg" alt=""></div>
+    </div>
+    <br>
+    <div class="pric" id="pricei">
+        <div class="fre">
+            <div style="background-color: blueviolet; padding: 20px; color: white;" class="twi">
+                <h3>Free trial</h3>
+                <br>
+                <h1>FREE</h1>
+                <h5>For a weak</h5>
+                <p>free for beginners</p>
+                <h6>valid for 2 weaks</h6>
+                <button>Select</button>
+            </div>
+            <div style="padding: 10px; font-size: larger;" class="wit">
+                <p style="margin-top: 50px;">Free Trial</p>
+
+                <p>Fitness assessment</p>
+
+                <p>Locker room with showers</p>
+
+            </div>
+        </div>
+        <div class="lov">
+            <div style="background-color: black; padding: 10px; color: white;" class="twi">
+                <h3>Silver Membership</h3>
+                <br>
+                <div style="color: white; display: flex; z-index: 1;">
+                    $<sub style="font-size: 80px;">15</sub>
+                </div>
+
+                <h6 style="margin-top: 35px;">Every month</h6>
+                <p>Ideal for advanced trainees</p>
+
+                <p>Valid for 6 months</p>
+                <button>Select</button>
+            </div>
+            <div style="padding: 10px; font-size: larger;" class="wit">
+                <p style="margin-top: 50px;">Unlimited Classes</p>
+
+                <p>Fitness assessment</p>
+
+                <p>Locker room with showers</p>
+
+                <p>Free parking</p>
+            </div>
+        </div>
+        <div class="hig">
+            <div style="background-color: blueviolet; color: white; padding: 10px;" class="twi">
+                <h3>Gold Membership</h3>
+                <br>
+                <div style="color: white; display: flex; z-index: 1;">
+                    $<sub style="font-size: 80px;">30</sub>
+                </div>
+                <h6 style="margin-top: 30px;">Every month</h6>
+                <p>Perfect for committed trainers</p>
+                <p>Valid for 12 months</p>
+                <button>Select</button>
+
+            </div>
+            <div style="padding: 10px; font-size: larger;" class="wit">
+                <p style="margin-top: 50px;">Unlimited Classes</p>
+
+                <p>Fitness assessment</p>
+
+                <p>Locker room with showers</p>
+
+                <p>Free parking</p>
+
+                <p>Guest Privileges</p>
+            </div>
+        </div>
+    </div>
+    <div class="lasti" id="contactii">
+        <div class="bolo">
+            <h1>G.White</h1>
+            <br>
+            <br>
+            <p>123-456-7890</p>
+            <p>info@mysite.com</p>
+            <br>
+            <br>
+            <p>gabanidze.st</p>
+            <p>Tbilisi</p>
+            <p>60943</p>
+        </div>
+        <div class="marji">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Accessibility Statement</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Refund Policy</a>
+            <br>
+            <br>
+            <br>
+            <p>© 2024 G.White. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
